@@ -91,7 +91,7 @@ export default function EnerGiroLanding() {
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-2xl font-bold text-primary font-serif">
+            <div className="text-2xl font-bold text-primary">
               EnerGiro
             </div>
 
@@ -101,10 +101,7 @@ export default function EnerGiroLanding() {
                 { label: "Problema", id: "problema" },
                 { label: "Solución", id: "solucion" },
                 { label: "Cómo funciona", id: "como-funciona" },
-                { label: "Actores", id: "actores" },
-                { label: "MVP", id: "mvp" },
-                { label: "Roadmap", id: "roadmap" },
-                { label: "Beneficios", id: "beneficios" },
+                { label: "Impacto", id: "impacto" },
                 { label: "ODS", id: "ods" },
                 { label: "FAQ", id: "faq" },
                 { label: "Equipo", id: "equipo" },
@@ -136,8 +133,8 @@ export default function EnerGiroLanding() {
             <nav className="lg:hidden mt-4 pb-4 border-t border-border pt-4">
               <div className="flex flex-col space-y-2">
                 {[
-                  { label: "Solución", id: "solucion" },
                   { label: "Problema", id: "problema" },
+                  { label: "Solución", id: "solucion" },
                   { label: "Cómo funciona", id: "como-funciona" },
                   { label: "Impacto", id: "impacto" },
                   { label: "ODS", id: "ods" },
@@ -171,7 +168,7 @@ export default function EnerGiroLanding() {
         </div>
 
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 font-serif drop-shadow-lg">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 drop-shadow-lg">
             ¿Cuánto valen tus residuos?
           </h1>
           <p className="text-xl md:text-2xl lg:text-3xl mb-8 max-w-4xl mx-auto drop-shadow-md">
@@ -214,7 +211,7 @@ export default function EnerGiroLanding() {
       {/* Solución Section */}
       <section id="solucion" className="py-20 px-4">
         <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 font-serif">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
             Conectamos Actores Clave
           </h2>
           <p className="text-xl text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
@@ -268,7 +265,7 @@ export default function EnerGiroLanding() {
       {/* Problema Section */}
       <section id="problema" className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 font-serif">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             El Problema
           </h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -338,7 +335,7 @@ export default function EnerGiroLanding() {
       {/* Cómo funciona Section */}
       <section id="como-funciona" className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 font-serif">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             Cómo funciona
           </h2>
 
@@ -392,7 +389,7 @@ export default function EnerGiroLanding() {
       {/* Impacto Section */}
       <section id="impacto" className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 font-serif">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             Impacto
           </h2>
 
@@ -442,7 +439,7 @@ export default function EnerGiroLanding() {
       {/* ODS Section */}
       <section id="ods" className="py-20 px-4">
         <div className="container mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8 font-serif">
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">
             Objetivos de Desarrollo Sostenible
           </h2>
           <div className="max-w-3xl mx-auto">
@@ -491,7 +488,7 @@ export default function EnerGiroLanding() {
       {/* FAQ Section */}
       <section id="faq" className="py-20 px-4">
         <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 font-serif">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             Preguntas Frecuentes
           </h2>
 
@@ -555,7 +552,7 @@ export default function EnerGiroLanding() {
       {/* Equipo Section */}
       <section id="equipo" className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 font-serif">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
             Nuestro Equipo
           </h2>
 
@@ -584,7 +581,7 @@ export default function EnerGiroLanding() {
       {/* Contacto Section */}
       <section id="contacto" className="py-20 px-4">
         <div className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 font-serif">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
             Contacto
           </h2>
           <p className="text-xl text-center text-muted-foreground mb-12">
@@ -652,8 +649,9 @@ export default function EnerGiroLanding() {
                     <option value="">Selecciona tu rol</option>
                     <option value="Generador">Generador de residuos</option>
                     <option value="Logística">Operador logístico</option>
-                    <option value="Planta">Planta de biogás</option>
+                    <option value="Planta">Generador de biogás</option>
                     <option value="Gobierno">Gobierno/Municipio</option>
+                    <option value="Otro">Otro</option>
                   </select>
                 </div>
                 <div>
@@ -740,7 +738,7 @@ export default function EnerGiroLanding() {
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div>
-              <div className="text-2xl font-bold text-primary mb-4 font-serif">
+              <div className="text-2xl font-bold text-primary mb-4">
                 EnerGiro
               </div>
               <p className="text-muted-foreground">
