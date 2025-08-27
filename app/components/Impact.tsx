@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { DollarSign, Sparkles, Users } from "lucide-react";
+import { DollarSign, Leaf, Users } from "lucide-react";
 
 export default function Impact() {
   const impacts = [
@@ -13,7 +13,7 @@ export default function Impact() {
     },
     {
       title: "Ambiental",
-      icon: Sparkles,
+      icon: Leaf,
       description:
         "Generación de energía renovable a partir de residuos y reducción significativa de gases de efecto invernadero.",
     },
@@ -43,7 +43,7 @@ export default function Impact() {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="section-title">Impacto</h2>
+          <h2 className="section-title">Como impacta <span className="text-gradient">EnerGiro</span></h2>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
