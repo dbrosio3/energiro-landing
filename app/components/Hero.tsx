@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { ChevronDown, Zap, Recycle, Leaf } from "lucide-react";
-import Spline from "@splinetool/react-spline";
 
 export default function Hero() {
   const scrollToSection = (href: string) => {
@@ -34,11 +33,9 @@ export default function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-top bg-no-repeat opacity-75"
         style={{ backgroundImage: "url('/hero-bg.jpg')" }}
-      >
-        {/* <Spline scene="https://prod.spline.design/wvfvglcGhSCCAUGz/scene.splinecode" /> */}
-      </div>
+      />
 
-      <div className="relative mx-auto max-w-7xl px-6 py-20 lg:px-8 text-center z-10 pointer-events-none">
+      <div className="relative mx-auto max-w-7xl px-6 py-20 lg:px-8 text-center z-10">
         <motion.div
           className="mb-8 flex justify-center"
           initial={{ opacity: 0, scale: 0.8 }}

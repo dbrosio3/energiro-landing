@@ -1,14 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  RotateCcw,
-  Building2,
-  Map,
-  Zap,
-  BarChart3,
-  ArrowRight,
-} from "lucide-react";
+import { RotateCcw, Building2, Map, Zap, BarChart3 } from "lucide-react";
+import Spline from "@splinetool/react-spline";
 
 export default function HowItWorks() {
   const steps = [
@@ -50,45 +44,46 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section id="como-funciona" className="py-20 bg-[#0A1F16]">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="flex justify-center mb-4">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20">
-              <Zap className="h-5 w-5 text-secondary" />
-              <span className="text-sm font-medium text-[#ffffff]">
-                Proceso
-              </span>
-            </div>
-          </div>
-          <h2 className="section-title text-gradient">Cómo funciona</h2>
-        </motion.div>
+    <section
+      id="como-funciona"
+      className="py-20 bg-[#0A1F16] relative"
+    >
+      {/* Spline Background */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <Spline scene="https://prod.spline.design/wvfvglcGhSCCAUGz/scene.splinecode" />
+      </div>
 
-        <div className="space-y-8">
+      {/* Content Overlay */}
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 pointer-events-none">
+        <div className="space-y-8 bg-white/70 backdrop-blur-lg rounded-lg p-12 border border-white/10">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="section-title text-gradient">Cómo funciona</h2>
+
+          </motion.div>
+
           {steps.map((step, index) => (
             <motion.div
               key={step.number}
-              className="bg-secondary/5 rounded-lg p-12"
-              // className="flex items-center gap-8 bg-[#1fb473] text-white rounded-lg p-6 hover:shadow-lg transition-all duration-300 backdrop-blur-sm border-2 border-[#364652] hover:border-secondary/40 relative overflow-hidden group"
+              className=""
               initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="relative z-10 flex items-center gap-8 w-full">
-                {/* <div className="flex-shrink-0 flex items-center justify-center w-16 h-16 bg-secondary text-secondary-foreground rounded-full text-2xl font-bold shadow-lg">
-                  {step.number}
-                </div> */}
+              <div className="flex items-center gap-8 w-full">
                 <step.icon className="h-8 w-8 text-secondary flex-shrink-0" />
-                <h3 className="text-xl font-semibold text-secondary-foreground">
-                  {step.title}
-                </h3>
+                <div>
+                  <h3 className="text-xl font-semibold text-muted-foreground mb-2">
+                    {step.title}
+                  </h3>
+                  <p className="text-muted-foreground">{step.description}</p>
+                </div>
               </div>
             </motion.div>
           ))}
