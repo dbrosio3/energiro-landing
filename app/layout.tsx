@@ -1,36 +1,30 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Jost } from "next/font/google"
 import "./globals.css"
+import { Inter } from "next/font/google"
+import Header from "./components/Header"
+import Footer from "./components/Footer"
+import type React from "react"
 
-const jost = Jost({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-jost",
-})
+const inter = Inter({ subsets: ["latin"] })
 
-export const metadata: Metadata = {
-  title: "EnerGiro - Plataforma para valorizar residuos orgánicos",
+export const metadata = {
+  title: "EnerGiro - Transformamos residuos en energía",
   description:
-    "Conectamos generadores, logística y plantas de biogás para convertir residuos en energía. Transformamos residuos orgánicos en valor local.",
-  keywords: "residuos orgánicos, biogás, energía renovable, economía circular, sostenibilidad",
-  openGraph: {
-    title: "EnerGiro - Plataforma para valorizar residuos orgánicos",
-    description: "Conectamos generadores, logística y plantas de biogás para convertir residuos en energía",
-    type: "website",
-    locale: "es_ES",
-  },
-  generator: "v0.app",
+    "Conectamos productores con plantas de biogás y operadores logísticos para optimizar la gestión de residuos orgánicos.",
+    generator: 'v0.app'
 }
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
-    <html lang="es" className={`${jost.variable} antialiased`}>
-      <body className="font-sans">{children}</body>
+    <html lang="es">
+      <body className={`${inter.className} min-h-screen bg-background text-foreground gradient-bg`}>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </body>
     </html>
   )
 }

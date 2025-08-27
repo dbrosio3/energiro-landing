@@ -1,126 +1,162 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@custom-variant dark (&:is(.dark *));
-
-:root {
-  /* Updated color tokens to use environmental palette from provided image */
-  --background: #fafaf8; /* Lighter cream background */
-  --foreground: #120202; /* Dark brown for text */
-  --card: #ffffff;
-  --card-foreground: #120202;
-  --popover: #ffffff;
-  --popover-foreground: #120202;
-  --primary: #38a3a5; /* Teal as primary environmental color */
-  --primary-foreground: #ffffff;
-  --secondary: #57c999; /* Medium green as secondary */
-  --secondary-foreground: #ffffff;
-  --muted: rgba(250, 250, 248, 0.6); /* Lighter cream for muted areas */
-  --muted-foreground: #120202;
-  --accent: #80ed99; /* Bright green for accents */
-  --accent-foreground: #120202;
-  --destructive: #ea580c;
-  --destructive-foreground: #ffffff;
-  --border: rgba(18, 2, 2, 0.1); /* Subtle dark border */
-  --input: #ffffff;
-  --ring: rgba(56, 163, 165, 0.5); /* Teal ring */
-  --chart-1: #38a3a5;
-  --chart-2: #57c999;
-  --chart-3: #80ed99;
-  --chart-4: #003f91;
-  --chart-5: #120202;
-  --radius: 0.5rem;
-  --sidebar: #ffffff;
-  --sidebar-foreground: #120202;
-  --sidebar-primary: #38a3a5;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #80ed99;
-  --sidebar-accent-foreground: #120202;
-  --sidebar-border: rgba(18, 2, 2, 0.1);
-  --sidebar-ring: rgba(56, 163, 165, 0.5);
-}
-
-.dark {
-  /* Updated dark mode to maintain environmental theme with darker variants */
-  --background: #120202; /* Dark brown background */
-  --foreground: #fafaf8; /* Cream text */
-  --card: rgba(18, 2, 2, 0.8);
-  --card-foreground: #fafaf8;
-  --popover: rgba(18, 2, 2, 0.9);
-  --popover-foreground: #fafaf8;
-  --primary: #38a3a5; /* Keep teal as primary */
-  --primary-foreground: #fafaf8;
-  --secondary: #57c999; /* Keep medium green */
-  --secondary-foreground: #fafaf8;
-  --muted: rgba(18, 2, 2, 0.6);
-  --muted-foreground: rgba(250, 250, 248, 0.7);
-  --accent: #80ed99; /* Bright green accent */
-  --accent-foreground: #120202;
-  --destructive: #dc2626;
-  --destructive-foreground: #fafaf8;
-  --border: rgba(56, 163, 165, 0.2);
-  --input: rgba(18, 2, 2, 0.8);
-  --ring: rgba(56, 163, 165, 0.5);
-  --chart-1: #38a3a5;
-  --chart-2: #57c999;
-  --chart-3: #80ed99;
-  --chart-4: #003f91;
-  --chart-5: #fafaf8;
-  --sidebar: rgba(18, 2, 2, 0.8);
-  --sidebar-foreground: #fafaf8;
-  --sidebar-primary: #38a3a5;
-  --sidebar-primary-foreground: #fafaf8;
-  --sidebar-accent: #80ed99;
-  --sidebar-accent-foreground: #120202;
-  --sidebar-border: rgba(56, 163, 165, 0.2);
-  --sidebar-ring: rgba(56, 163, 165, 0.5);
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+@layer base {
+  :root {
+    /* Main light theme with environmental colors */
+    --background: 43 25% 94%; /* F4EEDD - Beige 200 */
+    --foreground: 0 0% 15%; /* Dark gray instead of red */
+    
+    /* Cards with subtle background */
+    --card: 43 75% 98%; /* Beige 100 */
+    --card-foreground: 0 0% 15%; /* Dark gray */
+    
+    /* Popovers */
+    --popover: 43 75% 98%; /* Beige 100 */
+    --popover-foreground: 0 0% 15%; /* Dark gray */
+    
+    /* Primary - Mint Green */
+    --primary: 150 45% 57%; /* 57CC99 - Mint 500 */
+    --primary-foreground: 43 75% 98%; /* Light beige */
+    
+    /* Secondary - Purple */
+    --secondary: 270 36% 66%; /* AB81CD - Purple 500 */
+    --secondary-foreground: 43 75% 98%; /* Light beige */
+    
+    /* Muted areas - Light teal */
+    --muted: 181 49% 49%; /* 38A3A5 - Teal 500 */
+    --muted-foreground: 0 0% 25%; /* Dark gray */
+    
+    /* Accent - Environmental Blue */
+    --accent: 215 100% 29%; /* 003F91 - Main blue */
+    --accent-foreground: 43 75% 98%; /* Light beige */
+    
+    /* Destructive - Cherry red (only for errors) */
+    --destructive: 354 61% 52%; /* D33643 - Cherry 500 */
+    --destructive-foreground: 43 75% 98%; /* Light beige */
+    
+    /* Borders and inputs */
+    --border: 181 25% 80%; /* Light teal variant */
+    --input: 181 25% 85%; /* Lighter teal variant */
+    --ring: 150 45% 57%; /* Primary mint green */
+    
+    /* Border radius */
+    --radius: 0.75rem;
+    
+    /* Custom environmental colors */
+    --mint-50: 150 45% 90%;
+    --mint-100: 150 45% 85%;
+    --mint-200: 150 45% 75%;
+    --mint-300: 150 45% 70%;
+    --mint-400: 150 45% 62%;
+    --mint-500: 150 45% 57%; /* 57CC99 */
+    --mint-600: 150 50% 47%;
+    --mint-700: 150 60% 35%;
+    --mint-800: 150 65% 25%;
+    --mint-900: 150 70% 15%;
+    
+    --lime-50: 115 100% 97%;
+    --lime-100: 115 82% 92%;
+    --lime-200: 115 74% 80%;
+    --lime-300: 115 68% 71%;
+    --lime-400: 115 63% 62%;
+    --lime-500: 115 58% 73%; /* 80ED99 */
+    --lime-600: 115 75% 50%;
+    --lime-700: 115 82% 38%;
+    --lime-800: 115 88% 28%;
+    --lime-900: 115 92% 18%;
+    
+    --teal-50: 181 49% 90%;
+    --teal-100: 181 49% 85%;
+    --teal-200: 181 49% 75%;
+    --teal-300: 181 49% 65%;
+    --teal-400: 181 49% 55%;
+    --teal-500: 181 49% 49%; /* 38A3A5 */
+    --teal-600: 181 60% 40%;
+    --teal-700: 181 70% 30%;
+    --teal-800: 181 80% 20%;
+    --teal-900: 181 90% 12%;
+    
+    --purple-50: 270 36% 95%;
+    --purple-100: 270 36% 90%;
+    --purple-200: 270 36% 80%;
+    --purple-300: 270 36% 73%;
+    --purple-400: 270 36% 70%;
+    --purple-500: 270 36% 66%; /* AB81CD */
+    --purple-600: 270 45% 55%;
+    --purple-700: 270 55% 45%;
+    --purple-800: 270 65% 35%;
+    --purple-900: 270 75% 25%;
+    
+    --beige-50: 43 100% 100%;
+    --beige-100: 43 75% 98%;
+    --beige-200: 43 25% 94%; /* F4EEDD */
+    --beige-300: 43 30% 85%;
+    --beige-400: 43 35% 75%;
+    --beige-500: 43 40% 65%;
+    --beige-600: 43 45% 55%;
+    --beige-700: 43 50% 45%;
+    --beige-800: 43 55% 35%;
+    --beige-900: 43 60% 25%;
+  }
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-jost), sans-serif;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
+}
+
+.apple-button {
+  @apply px-6 py-3 rounded-full bg-primary text-primary-foreground font-semibold transition-all duration-300 ease-in-out hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 shadow-lg hover:shadow-xl;
+}
+
+.secondary-button {
+  @apply px-6 py-3 rounded-full bg-secondary text-secondary-foreground font-semibold transition-all duration-300 ease-in-out hover:bg-secondary/90 focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-opacity-50 shadow-lg hover:shadow-xl;
+}
+
+.section-title {
+  @apply text-4xl font-bold mb-8 text-center text-foreground;
+}
+
+.section-title-white {
+  @apply text-4xl font-bold mb-8 text-center text-white;
+}
+
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
+}
+
+.text-gradient-green {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-green-700 to-green-500;
+}
+
+.text-gradient-purple {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-secondary to-purple-600;
+}
+
+.text-gradient-blue {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-primary;
+}
+
+.hover-lift {
+  @apply transition-all duration-300 ease-in-out hover:-translate-y-1 hover:shadow-lg;
+}
+
+.eco-card {
+  @apply bg-card border border-border rounded-lg p-6 hover:shadow-lg transition-all duration-300 backdrop-blur-sm;
+}
+
+
+.gradient-bg {
+  background: linear-gradient(135deg, hsl(var(--beige-100)) 0%, hsl(var(--mint-50)) 100%);
+}
+
+.energy-gradient {
+  background: linear-gradient(135deg, hsl(var(--lime-100)) 0%, hsl(var(--mint-100)) 50%, hsl(var(--teal-100)) 100%);
 }
