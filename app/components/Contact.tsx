@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
+import { useForm as useFormspree } from "@formspree/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Input } from "@/components/ui/input";
@@ -41,7 +42,7 @@ const formSchema = z.object({
 });
 
 export default function Contact() {
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [state, handleSubmit] = useFormspree("mzzazpon");
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -54,18 +55,31 @@ export default function Contact() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
-      console.log(values);
-      setIsSubmitting(false);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    // Create a form data object that matches Formspree's expected format
+    const formData = new FormData();
+    formData.append("name", values.name);
+    formData.append("email", values.email);
+    formData.append("role", values.role);
+    if (values.province) formData.append("province", values.province);
+    if (values.message) formData.append("message", values.message);
+
+    // Submit to Formspree
+    await handleSubmit(formData);
+    
+    if (state.succeeded) {
       toast({
         title: "¡Mensaje enviado!",
         description: "Te contactaremos pronto.",
       });
       form.reset();
-    }, 2000);
+    } else if (state.errors) {
+      toast({
+        title: "Error al enviar",
+        description: "Por favor verifica los datos e intenta nuevamente.",
+        variant: "destructive",
+      });
+    }
   }
 
   return (
@@ -104,11 +118,21 @@ export default function Contact() {
             <h3 className="text-2xl font-semibold mb-6 text-card-foreground">
               Envíanos un mensaje
             </h3>
-            <Form {...form}>
-              <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-6"
-              >
+            {state.succeeded ? (
+              <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
+                <h4 className="text-lg font-semibold text-green-800 mb-2">
+                  ¡Gracias por contactarnos!
+                </h4>
+                <p className="text-green-700">
+                  Hemos recibido tu mensaje y te contactaremos pronto.
+                </p>
+              </div>
+            ) : (
+              <Form {...form}>
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="space-y-6"
+                >
                 <FormField
                   control={form.control}
                   name="name"
@@ -203,12 +227,13 @@ export default function Contact() {
                 <Button
                   type="submit"
                   className="w-full"
-                  disabled={isSubmitting}
+                  disabled={state.submitting}
                 >
-                  {isSubmitting ? "Enviando..." : "Enviar mensaje"}
+                  {state.submitting ? "Enviando..." : "Enviar mensaje"}
                 </Button>
               </form>
             </Form>
+            )}
           </motion.div>
 
           <motion.div
