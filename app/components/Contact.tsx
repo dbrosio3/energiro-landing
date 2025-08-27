@@ -254,10 +254,10 @@ export default function Contact() {
                 <div>
                   <p className="font-medium text-card-foreground">Email</p>
                   <a
-                    href="mailto:energiro@gmail.com"
+                    href="mailto:energiro2025@gmail.com"
                     className="text-primary hover:text-primary/80 transition-colors"
                   >
-                    energiro@gmail.com
+                    energiro2025@gmail.com
                   </a>
                 </div>
               </div>

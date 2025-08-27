@@ -51,7 +51,7 @@ export default function Footer() {
         <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-6 text-sm text-muted-foreground">
           <div className="flex items-center gap-2">
             <Mail className="h-4 w-4 text-primary" />
-            <span>energiro@gmail.com</span>
+            <span>energiro2025@gmail.com</span>
           </div>
           <div className="flex items-center gap-2">
             <MapPin className="h-4 w-4 text-primary" />

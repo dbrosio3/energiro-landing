@@ -68,24 +68,28 @@ export default function HowItWorks() {
           </motion.div>
 
           {steps.map((step, index) => (
-            <motion.div
-              key={step.number}
-              className=""
-              initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <div className="flex items-center gap-8 w-full">
-                <step.icon className="h-8 w-8 text-secondary flex-shrink-0" />
-                <div>
-                  <h3 className="text-xl font-semibold text-muted-foreground mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-muted-foreground">{step.description}</p>
+            <div key={step.number}>
+              <motion.div
+                className=""
+                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex items-center gap-4 md:gap-8 w-full">
+                  <step.icon className="h-8 w-8 text-secondary flex-shrink-0" />
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-muted-foreground mb-2">
+                      {step.title}
+                    </h3>
+                    <p className="text-muted-foreground">{step.description}</p>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+              {index < steps.length - 1 && (
+                <div className="my-8 w-full h-px bg-gradient-to-r from-transparent via-purple-300/30 to-transparent"></div>
+              )}
+            </div>
           ))}
         </div>
       </div>

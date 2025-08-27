@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Users } from "lucide-react"
+import { User } from "lucide-react"
 
 export default function Team() {
   const teamMembers = [
@@ -37,7 +37,7 @@ export default function Team() {
             >
               <div className="flex justify-center mb-6">
                 <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center">
-                  <Users className="h-10 w-10 text-primary" />
+                  <User className="h-10 w-10 text-primary" />
                 </div>
               </div>
               <h3 className="text-xl font-semibold mb-2 text-card-foreground">{member.name}</h3>

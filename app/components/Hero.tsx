@@ -31,7 +31,7 @@ export default function Hero() {
 
       {/* Image overlay with better blend */}
       <div
-        className="absolute inset-0 bg-cover bg-top bg-no-repeat opacity-75"
+        className="absolute inset-0 bg-cover bg-top bg-no-repeat opacity-50 xl:opacity-75 blur-sm xl:blur-[2px]"
         style={{ backgroundImage: "url('/hero-bg.jpg')" }}
       />
 
@@ -58,7 +58,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
         >
-          Transformamos desechos en energía limpia
+          {/* energia limpia va underlined: */}
+          Transformamos desechos en <span className="underline underline-offset-4 decoration-green-500 font-bold">energía limpia</span>
         </motion.h2>
 
         <motion.p
@@ -67,7 +68,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Conectamos productores con plantas de biogás y operadores logísticos
+          Conectando productores con plantas de biogás y operadores logísticos
           para optimizar la gestión de residuos orgánicos y generar energías
           renovables.
         </motion.p>
