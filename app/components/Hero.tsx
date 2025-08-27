@@ -88,7 +88,8 @@ export default function Hero() {
             Contactar
           </button>
           <a
-            href="#"
+            href="https://docs.google.com/presentation/d/1EI8N4pHUiTokvfe8qzUZH0cvprGuopztvvfA9YvAA-o/edit?usp=sharing"
+            target="_blank"
             className="secondary-button text-lg font-semibold leading-6 text-secondary-foreground transition-colors flex items-center gap-2 pointer-events-auto"
           >
             Ver presentación <span aria-hidden="true">→</span>
