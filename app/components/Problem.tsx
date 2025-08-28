@@ -72,20 +72,43 @@ export default function Problem() {
               <div className="absolute inset-0 bg-gradient-to-br from-muted/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               
               <div className="relative z-10">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0">
-                    <div className="p-3 rounded-full bg-muted/10 group-hover:bg-muted/20 transition-colors duration-300">
-                      <problem.icon className="h-6 w-6 text-muted" />
+                {/* Mobile layout: stats at top, centered */}
+                <div className="block md:hidden">
+                  <div className="text-center mb-4">
+                    <span className="text-lg font-bold text-muted bg-muted/10 px-3 py-2 rounded-full inline-block">
+                      {problem.stat}
+                    </span>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="p-3 rounded-full bg-muted/10 group-hover:bg-muted/20 transition-colors duration-300">
+                        <problem.icon className="h-6 w-6 text-muted" />
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-semibold text-card-foreground mb-3">{problem.title}</h3>
+                      <p className="text-muted-foreground leading-relaxed">{problem.description}</p>
                     </div>
                   </div>
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between mb-3">
-                      <h3 className="text-xl font-semibold text-card-foreground">{problem.title}</h3>
-                      <span className="text-sm font-bold text-muted bg-muted/10 px-2 py-1 rounded-full">
-                        {problem.stat}
-                      </span>
+                </div>
+
+                {/* Desktop layout: original layout */}
+                <div className="hidden md:block">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="p-3 rounded-full bg-muted/10 group-hover:bg-muted/20 transition-colors duration-300">
+                        <problem.icon className="h-6 w-6 text-muted" />
+                      </div>
                     </div>
-                    <p className="text-muted-foreground leading-relaxed">{problem.description}</p>
+                    <div className="flex-1">
+                      <div className="flex items-center justify-between mb-3">
+                        <h3 className="text-xl font-semibold text-card-foreground">{problem.title}</h3>
+                        <span className="text-sm font-bold text-muted bg-muted/10 px-2 py-1 rounded-full">
+                          {problem.stat}
+                        </span>
+                      </div>
+                      <p className="text-muted-foreground leading-relaxed">{problem.description}</p>
+                    </div>
                   </div>
                 </div>
               </div>
