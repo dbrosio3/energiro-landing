@@ -50,7 +50,7 @@ export default function HowItWorks() {
     >
       {/* Spline Background */}
       <div className="absolute inset-0 w-full h-full z-0">
-        <Spline scene="https://prod.spline.design/wvfvglcGhSCCAUGz/scene.splinecode" />
+        <Spline scene="https://prod.spline.design/kUnnE0sjcviuCG1F/scene.splinecode" />
       </div>
 
       {/* Content Overlay */}
